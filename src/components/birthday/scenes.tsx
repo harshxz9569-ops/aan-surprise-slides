@@ -114,8 +114,20 @@ export function LetterScene({ next }: { next: () => void }) {
       {open && (
         <article className="animate-scene-in w-full max-w-[22rem] rounded-2xl bg-card p-6 text-left shadow-soft">
           <h2 className="text-2xl text-maroon">Dear MADHU,</h2>
-          <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-foreground">
-            your content
+          <p className="mt-3 whitespace-pre-line text-[0.8rem] leading-[1.6] text-foreground">
+            {`Happy Birthday, my Jaan ❤️
+
+I don't think I'll ever be able to put into words how much I love you. We started as friends, and somehow, you became the most important person in my life. It's been almost a year since we've been together, and honestly, having you as my partner has changed my life in ways I never expected.
+
+I love your smile, your eyes, your lips… but more than anything, I love simply listening to you talk about your day. Even the smallest things feel special when they come from you.
+
+I know I'm not a perfect boyfriend, and I know there are times when I could be better. But I promise you, Jaan, I'll always try my best for you. I want to grow with you, make you happy, stand beside you, and be there for you through everything.
+
+I don't just want you in my life today. I want to marry you one day and build a life with you. ❤️
+
+Thank you for being my person, my happiness, and my Jaan. I love you more than I could ever explain.
+
+Happy Birthday, my love. ❤️`}
           </p>
           <p className="mt-4 text-right text-sm text-rose">— Always yours ❤</p>
         </article>
