@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Scene, SceneTitle, SceneSub, SceneButton } from "./Scene";
-import p1 from "@/assets/p1.jpg.asset.json";
-import p2 from "@/assets/p2.jpg.asset.json";
-import p3 from "@/assets/p3.jpg.asset.json";
-import p4 from "@/assets/p4.jpg.asset.json";
-import p5 from "@/assets/p5.jpg.asset.json";
-import p6 from "@/assets/p6.jpg.asset.json";
-import giftVideo from "@/assets/gift.mp4.asset.json";
+const p1 = "/media/p1.jpg";
+const p2 = "/media/p2.jpg";
+const p3 = "/media/p3.jpg";
+const p4 = "/media/p4.jpg";
+const p5 = "/media/p5.jpg";
+const p6 = "/media/p6.jpg";
+const giftVideo = "/media/gift.mp4";
 
 /* ---------------- Scene 1: Hero ---------------- */
 export function HeroScene({ next }: { next: () => void }) {
