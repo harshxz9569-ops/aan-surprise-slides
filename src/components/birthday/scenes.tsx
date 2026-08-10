@@ -6,6 +6,7 @@ import p3 from "@/assets/p3.jpg.asset.json";
 import p4 from "@/assets/p4.jpg.asset.json";
 import p5 from "@/assets/p5.jpg.asset.json";
 import p6 from "@/assets/p6.jpg.asset.json";
+import giftVideo from "@/assets/gift.mp4.asset.json";
 
 /* ---------------- Scene 1: Hero ---------------- */
 export function HeroScene({ next }: { next: () => void }) {
@@ -227,6 +228,16 @@ export function GiftScene({ next }: { next: () => void }) {
             day feel for me. You're loved more than I can fit into words — today
             and every ordinary day after it.
           </p>
+          <div className="mt-4 overflow-hidden rounded-xl bg-blush/70">
+            <video
+              src={giftVideo.url}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="block h-auto w-full object-cover"
+            />
+          </div>
         </article>
       )}
 
