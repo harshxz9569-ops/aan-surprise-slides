@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { Scene, SceneTitle, SceneSub, SceneButton } from "./Scene";
+import p1 from "@/assets/p1.jpg.asset.json";
+import p2 from "@/assets/p2.jpg.asset.json";
+import p3 from "@/assets/p3.jpg.asset.json";
+import p4 from "@/assets/p4.jpg.asset.json";
+import p5 from "@/assets/p5.jpg.asset.json";
+import p6 from "@/assets/p6.jpg.asset.json";
 
 /* ---------------- Scene 1: Hero ---------------- */
 export function HeroScene({ next }: { next: () => void }) {
@@ -17,23 +23,14 @@ export function HeroScene({ next }: { next: () => void }) {
 
 /* ---------------- Scene 2: Photos ---------------- */
 const PHOTOS = [
-  "Celebrating you 🎉",
-  "That laugh of yours 😄",
-  "Our little escape 🌸",
-  "Late night talks 🌙",
-  "Just us, being us 💗",
-  "My favourite person 💫",
+  { src: p1.url, caption: "Celebrating you 🎉" },
+  { src: p2.url, caption: "That laugh of yours 😄" },
+  { src: p3.url, caption: "Our little escape 🌸" },
+  { src: p4.url, caption: "Late night talks 🌙" },
+  { src: p5.url, caption: "Just us, being us 💗" },
+  { src: p6.url, caption: "My favourite person 💫" },
 ];
 
-function PhotoIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-10 w-10 text-maroon/40" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="3" y="5" width="18" height="14" rx="3" />
-      <circle cx="8.5" cy="10" r="1.6" />
-      <path d="M4 17l4.5-4.5 3.5 3.5 3-2.5L20 17" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 export function PhotoScene({ next }: { next: () => void }) {
   const [index, setIndex] = useState(0);
@@ -45,7 +42,7 @@ export function PhotoScene({ next }: { next: () => void }) {
       <SceneSub>(swipe the cards)</SceneSub>
 
       <div className="relative h-[22rem] w-full max-w-[19rem]">
-        {PHOTOS.map((caption, i) => {
+        {PHOTOS.map(({ src, caption }, i) => {
           const pos = (i - index + PHOTOS.length) % PHOTOS.length;
           if (pos > 2) return null;
           return (
@@ -61,10 +58,16 @@ export function PhotoScene({ next }: { next: () => void }) {
                 opacity: pos === 0 ? 1 : 0.9,
               }}
             >
-              <div className="flex h-[15rem] w-full items-center justify-center rounded-xl bg-blush/70">
-                <PhotoIcon />
+              <div className="h-[15rem] w-full overflow-hidden rounded-xl bg-blush/70">
+                <img
+                  src={src}
+                  alt={caption}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-center"
+                />
               </div>
               <p className="mt-4 text-sm text-maroon">{caption}</p>
+
               <p className="mt-1 text-[0.7rem] text-muted-foreground">
                 {i + 1} / {PHOTOS.length} · tap
               </p>
