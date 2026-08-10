@@ -1,24 +1,54 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Hearts } from "@/components/birthday/Hearts";
+import {
+  HeroScene,
+  PhotoScene,
+  LetterScene,
+  SpecialScene,
+  GiftScene,
+  FinalScene,
+} from "@/components/birthday/scenes";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Happy Birthday, Madhu ❤️" },
+      {
+        name: "description",
+        content:
+          "A handmade birthday surprise for Madhu — memories, a letter, and a little gift, one scene at a time.",
+      },
+      { property: "og:title", content: "Happy Birthday, Madhu ❤️" },
+      {
+        property: "og:description",
+        content: "A handmade birthday surprise: memories, a letter, and a little gift.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const [scene, setScene] = useState(0);
+  const next = () => setScene((s) => s + 1);
+
+  const scenes = [
+    <HeroScene key="hero" next={next} />,
+    <PhotoScene key="photos" next={next} />,
+    <LetterScene key="letter" next={next} />,
+    <SpecialScene key="special" next={next} />,
+    <GiftScene key="gift" next={next} />,
+    <FinalScene key="final" restart={() => setScene(0)} />,
+  ];
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative w-full overflow-x-hidden">
+      <Hearts />
+      <div key={scene}>{scenes[scene]}</div>
+    </main>
   );
 }
