@@ -92,13 +92,14 @@ export function LetterScene({ next }: { next: () => void }) {
         onClick={() => setOpen(true)}
         aria-label="Open the letter"
         className="relative h-[9rem] w-[14rem] min-h-[44px] transition-transform duration-300 active:scale-95"
-        style={{ marginTop: open ? "5rem" : "0", transition: "margin 400ms ease, transform 300ms ease" }}
+        style={{ transform: open ? "scale(1.04)" : undefined }}
       >
         <div className="absolute inset-0 rounded-xl bg-blush shadow-soft" />
         <div
-          className="absolute inset-x-0 top-0 h-1/2 origin-top rounded-t-xl gradient-card transition-transform duration-500"
+          className="absolute inset-x-0 top-0 h-1/2 origin-top rounded-t-xl gradient-card transition-all duration-500"
           style={{
-            transform: open ? "rotateX(-170deg)" : "rotateX(0deg)",
+            transform: open ? "scaleY(0.05)" : "scaleY(1)",
+            opacity: open ? 0 : 1,
             clipPath: "polygon(0 0, 100% 0, 50% 100%)",
           }}
         />
