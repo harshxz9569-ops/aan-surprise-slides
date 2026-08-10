@@ -42,7 +42,7 @@ export function PhotoScene({ next }: { next: () => void }) {
       <SceneSub>(swipe the cards)</SceneSub>
 
       <div className="relative h-[22rem] w-full max-w-[19rem]">
-        {PHOTOS.map((caption, i) => {
+        {PHOTOS.map(({ src, caption }, i) => {
           const pos = (i - index + PHOTOS.length) % PHOTOS.length;
           if (pos > 2) return null;
           return (
@@ -58,10 +58,16 @@ export function PhotoScene({ next }: { next: () => void }) {
                 opacity: pos === 0 ? 1 : 0.9,
               }}
             >
-              <div className="flex h-[15rem] w-full items-center justify-center rounded-xl bg-blush/70">
-                <PhotoIcon />
+              <div className="h-[15rem] w-full overflow-hidden rounded-xl bg-blush/70">
+                <img
+                  src={src}
+                  alt={caption}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-center"
+                />
               </div>
               <p className="mt-4 text-sm text-maroon">{caption}</p>
+
               <p className="mt-1 text-[0.7rem] text-muted-foreground">
                 {i + 1} / {PHOTOS.length} · tap
               </p>
