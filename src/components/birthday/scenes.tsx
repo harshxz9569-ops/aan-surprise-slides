@@ -92,7 +92,7 @@ export function LetterScene({ next }: { next: () => void }) {
         onClick={() => setOpen(true)}
         aria-label="Open the letter"
         className="relative h-[9rem] w-[14rem] min-h-[44px] transition-transform duration-300 active:scale-95"
-        style={{ transform: open ? "scale(1.05)" : undefined }}
+        style={{ marginTop: open ? "5rem" : "0", transition: "margin 400ms ease, transform 300ms ease" }}
       >
         <div className="absolute inset-0 rounded-xl bg-blush shadow-soft" />
         <div
@@ -190,7 +190,7 @@ export function GiftScene({ next }: { next: () => void }) {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Open the gift"
-        className={`relative h-[8.5rem] w-[8.5rem] min-h-[44px] active:scale-95 ${open ? "" : "animate-soft-bounce"}`}
+        className={`relative h-[8.5rem] w-[8.5rem] min-h-[44px] active:scale-95 ${open ? "mt-10" : "animate-soft-bounce"}`}
       >
         <div
           className="absolute inset-x-0 top-6 bottom-0 rounded-lg gradient-card shadow-soft transition-transform duration-300"
