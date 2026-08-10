@@ -200,7 +200,7 @@ export function GiftScene({ next }: { next: () => void }) {
         <div className="absolute inset-x-0 top-6 bottom-0 mx-auto w-4 bg-maroon/70" />
         <div
           className="absolute inset-x-0 top-2 h-8 origin-bottom rounded-md bg-rose shadow-soft transition-transform duration-500"
-          style={{ transform: open ? "translateY(-2.5rem) rotate(-16deg)" : undefined }}
+          style={{ transform: open ? "translateY(-1.5rem) rotate(-14deg)" : undefined }}
         />
         <span className="absolute left-1/2 top-0 -translate-x-1/2 text-xl">🎀</span>
       </button>
