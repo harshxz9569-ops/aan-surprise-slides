@@ -24,12 +24,12 @@ export function HeroScene({ next }: { next: () => void }) {
 
 /* ---------------- Scene 2: Photos ---------------- */
 const PHOTOS = [
-  { src: p1.url, caption: "Celebrating you 🎉" },
-  { src: p2.url, caption: "That laugh of yours 😄" },
-  { src: p3.url, caption: "Our little escape 🌸" },
-  { src: p4.url, caption: "Late night talks 🌙" },
-  { src: p5.url, caption: "Just us, being us 💗" },
-  { src: p6.url, caption: "My favourite person 💫" },
+  { src: p1, caption: "Celebrating you 🎉" },
+  { src: p2, caption: "That laugh of yours 😄" },
+  { src: p3, caption: "Our little escape 🌸" },
+  { src: p4, caption: "Late night talks 🌙" },
+  { src: p5, caption: "Just us, being us 💗" },
+  { src: p6, caption: "My favourite person 💫" },
 ];
 
 
@@ -230,7 +230,7 @@ export function GiftScene({ next }: { next: () => void }) {
           </p>
           <div className="mt-4 overflow-hidden rounded-xl bg-blush/70">
             <video
-              src={giftVideo.url}
+              src={giftVideo}
               autoPlay
               loop
               muted
