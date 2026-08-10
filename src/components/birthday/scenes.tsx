@@ -140,15 +140,15 @@ Happy Birthday, my love. ❤️`}
 
 /* ---------------- Scene 4: Why You're Special ---------------- */
 const REASONS = [
-  "Your smile shows up before your words do — and it fixes my whole day.",
-  "Your laugh is loud, unfiltered, and my favourite sound on earth.",
-  "You make a boring Tuesday feel like something worth remembering.",
-  "You hold yourself together on hard days in a way I quietly admire.",
-  "You're kind to people who can't do anything for you.",
-  "You remember the tiny things I mention once and never expect me to notice.",
-  "You argue with me and still hold my hand five minutes later.",
-  "You make me want to be a slightly better version of myself.",
-  "With you, even silence feels like home.",
+  "Your smile can turn even my worst day into a good one.",
+  "I could get lost in your eyes and still never want to find my way out.",
+  "I love hearing about your day, even the little things. I could listen to you forever.",
+  "Somehow, my girlfriend became my favorite person, my comfort, and my home.",
+  "Ever since you became my partner, life has felt completely different—in the best way.",
+  "I don't love some perfect version of you. I love you, exactly as you are.",
+  "I know I'm not a perfect boyfriend, but I'll always keep trying to become better for you.",
+  "I don't just want memories with you. I want a whole life with you.",
+  "Happy Birthday, my Jaan. My only wish is to be beside you for every birthday that comes after this one. ❤️",
 ];
 
 function FlipCard({ text }: { text: string }) {
